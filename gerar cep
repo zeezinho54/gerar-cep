@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de CEP aleatorio </title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+          text-align: center;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      button {
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          margin-bottom: 20px;
+      }
+
+      button:hover {
+          background-color: #45a049;
+      }
+
+      #cepGerado {
+          font-size: 18px;
+          color: #333;
+      }
+  </style>
+</head>
+<body>
+    <h1>Gerador de CEP</h1>
+
+    <h1>esse gerador de cep,apenas ira gerar numeros aleatorio em formato de cep, então se for para usar um cep valido aqui muito provavelmente nao é o lugar</h1>
+    <button onclick="gerarCEP()">Gerar CEP</button>
+    <p id="cepGerado"></p>
+
+    <script>
+        function gerarCEP() {
+            var cep = "";
+            for (var i = 0; i < 8; i++) {
+                cep += Math.floor(Math.random() * 10);
+                if (cep.length == 5) {
+                    cep += "-";
+                }
+            }
+            document.getElementById("cepGerado").innerText = "CEP gerado: " + cep;
+        }
+    </script>
+</body>
+</html>
